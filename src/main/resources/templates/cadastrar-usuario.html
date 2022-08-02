@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Cadastre-se</title>
+    <style>
+        .mensagem {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="cont-cad-usuario">
+            <div class="cad-usuario">
+                <h2>Cadastre-se</h2>
+                <p>É rápido e fácil.</p>
+                <span th:text="${mensagem}"></span>
+                <form class="form-cad" action="#" th:action="@{/user/salvar}" th:object="${usuario}" method="post">
+                    <input type="text" required="required" th:field="*{username}"
+                        placeholder="Digite seu usuário">
+                    <span class="mensagem" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                    <input type="email" required="required" th:field="*{email}" placeholder="Digite seu email">
+                    <span class="mensagem" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                    <input type="password" required="required" th:field="*{password}" placeholder="Digite sua senha">
+                    <span class="mensagem" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    <button type="submit">Cadastre-se</button>
+                    <button type="button"><a th:href="@{/}">Voltar</a></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

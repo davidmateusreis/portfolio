@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <style>
+        .mensagem {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont-login">
+        <div class="login">
+            <h2>Bem-vindo de volta!</h2>
+            <span th:text="${mensagem}"></span>
+            <div th:if="${param.error}">
+                <span>Senha ou usuário inválido</span>
+            </div>
+            <form class="form-cad" th:action="@{/login}" method="post">
+                <input type="text" name="username" placeholder="Digite seu usuário">
+                <input type="password" name="password" placeholder="Digite sua senha">
+                <div class="login">
+                    <span>Não tem cadastro? <a href="/user/novo">Clique aqui!</a></span>
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            <div class="login">
+                <input type="checkbox" style="accent-color: black;">
+                <label>Lembrar-me</label>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

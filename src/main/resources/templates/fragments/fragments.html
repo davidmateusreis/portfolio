@@ -14,10 +14,12 @@
     <header th:fragment="header">
         <div class="cont-nav">
             <div class="nav-left">
-                <a th:href="@{/inicio}">Início</a>
-                <a th:href="@{/sobre}">Sobre</a>
-                <a th:href="@{/curriculo}">Currículo</a>
-                <a th:href="@{/contato}">Contato</a>
+                <a th:href="@{/user/inicio}">Início</a>
+                <a th:href="@{/auth/user/sobre}">Sobre</a>
+                <a th:href="@{/auth/user/curriculo}">Currículo</a>
+                <a th:href="@{/auth/user/contato}">Contato</a>
+                <a th:href="@{/user/admin/listar}">Usuários</a>
+                <a th:href="@{/logout}">Sair</a>
             </div>
             <div class="nav-right">
                 <a href="https://facebook.com/davidmateusreis" target="_blank"><img src="/imgs/facebook.png"

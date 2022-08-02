@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Sobre</title>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: header"></div>
+    <section>
+        <div class="cont-sobre">
+            <div class="sobre-top">
+                <picture>
+                    <source media="(max-width: 400px)" srcset="/imgs/me.png">
+                    <img src="/imgs/me.png" alt="Myself" width="300px">
+                </picture>
+            </div>
+            <div class="sobre-bottom">
+                <h2>Perfil</h2>
+                <p>Durante toda a minha carreira tive a sorte de trabalhar em projetos genuinamente inspiradores, além
+                    de conhecer diversas pessoas influentes e criativas ao longo do caminho. Acredito na importância do
+                    trabalho em parceria para fazer com que o todo seja melhor do que a soma das partes. Para mais
+                    informações sobre a minha experiência, portfólio ou como posso ajudar com um projeto, fale comigo
+                    hoje mesmo.</p>
+            </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

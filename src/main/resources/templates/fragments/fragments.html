@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/style.css">
-    <title>Obrigado!</title>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Fragmentos</title>
 </head>
 
 <body>
-    <header>
+    <header th:fragment="header">
         <div class="cont-nav">
             <div class="nav-left">
-                <a href="/inicio.html">Início</a>
-                <a href="/sobre.html">Sobre</a>
-                <a href="/curriculo.html">Currículo</a>
-                <a href="/contato.html">Contato</a>
+                <a th:href="@{/inicio}">Início</a>
+                <a th:href="@{/sobre}">Sobre</a>
+                <a th:href="@{/curriculo}">Currículo</a>
+                <a th:href="@{/contato}">Contato</a>
             </div>
             <div class="nav-right">
                 <a href="https://facebook.com/davidmateusreis" target="_blank"><img src="/imgs/facebook.png"
@@ -33,18 +33,8 @@
             </div>
         </div>
     </header>
-    <section>
-        <div class="cont-obrigado">
-            <div class="obrigado">
-                <h1>Agradecido pelo contato!</h1>
-            </div>
-        </div>
-    </section>
-    <footer>
+    <footer th:fragment="footer">
         <div class="foot">
             <span>&copy;2022 <a href="https://github.com/davidmateusreis" target="_blank">David</a></span>
         </div>
     </footer>
-</body>
-
-</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Contato</title>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: header"></div>
+    <section>
+        <div class="cont-contato">
+            <div class="contato-left">
+                <h2>Entre em contato</h2>
+            </div>
+            <div class="contato-right">
+                <form class="form-cad" action="https://formsubmit.co/davidmateusreis@gmail.com" method="post">
+                    <input type="text" name="name" id="nome" placeholder="Digite seu nome" required>
+                    <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                    <input type="text" name="assunto" id="assunto" placeholder="Digite o assunto">
+                    <textarea name="mensagem" id="mensagem" cols="60" rows="10"
+                        placeholder="Digite sua mensagem aqui"></textarea>
+                    <button type="submit"><a href="/obrigado.html"></a>Enviar</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

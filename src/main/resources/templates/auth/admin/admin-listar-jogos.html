@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Lista de Jogos</title>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: header"></div>
+    <section>
+        <div class="cont-jogos">
+            <div class="jogos">
+                <h2>Lista de jogos</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Data de Lançamento</th>
+                            <th>Desenvolvedor</th>
+                            <th>Gênero</th>
+                            <th>Região</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${jogos.empty}">
+                            <td colspan="2">Sem jogos</td>
+                        </tr>
+                        <tr th:each="jogo : ${jogos}">
+                            <td><span th:text="${jogo.titulo}">Título</span></td>
+                            <td><span th:text="${#dates.format(jogo.dataDeLancamento, 'dd/MM/yyyy')}">Data de
+                                    Lançamento</span></td>
+                            <td><span th:text="${jogo.desenvolvedor}">Desenvolvedor</span></td>
+                            <td><span th:text="${jogo.genero}">Gênero</span></td>
+                            <td><span th:text="${jogo.regiao}">Região</span></td>
+                            <td>
+                                <a th:href="@{/jogo/admin/apagar/{id}(id=${jogo.id})}"
+                                    th:data-confirm-delete="|Você gostaria de apagar ${jogo.titulo}?|"
+                                    onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">Apagar</a>
+                                <a th:href="@{/jogo/editar/{id}(id=${jogo.id})}">Editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button><a th:href="@{/jogo/novo}">Adicionar</a></button>
+            </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

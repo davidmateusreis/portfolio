@@ -150,6 +150,21 @@ textarea:focus {
     box-shadow: 12px 12px;
 }
 
+.cont-jogos {
+    display: flex;
+    margin: 2%;
+    padding: 1%;
+    height: 690px;
+}
+
+.jogos {
+    margin: auto;
+    margin-top: 4%;
+    width: 70%;
+    text-align: center;
+    padding: 2%;
+}
+
 .cont-sobre {
     display: flex;
     flex-direction: column;
@@ -257,6 +272,20 @@ textarea:focus {
 }
 
 .cad-usuario {
+    margin: auto;
+    margin-top: 4%;
+    padding: 2%;
+}
+
+.cont-cad-jogo {
+    display: flex;
+    text-align: center;
+    margin: 2%;
+    padding: 1%;
+    height: 690px;
+}
+
+.cad-jogo {
     margin: auto;
     margin-top: 4%;
     padding: 2%;

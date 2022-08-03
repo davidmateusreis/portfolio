@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Adicionar Jogo</title>
+    <style>
+        .mensagem {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: header"></div>
+    <section>
+        <div class="cont-cad-jogo">
+            <div class="cad-jogo">
+                <h2>Adicione um jogo</h2>
+                <span th:text="${mensagem}"></span>
+                <form class="form-cad" action="#" th:action="@{/jogo/salvar}" th:object="${jogo}" method="post">
+                    <input type="text" required="required" th:field="*{titulo}" placeholder="Título">
+                    <span class="mensagem" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span>
+                    <input type="text" required="required" th:field="*{dataDeLancamento}"
+                        placeholder="Data de Lançamento">
+                    <span class="mensagem" th:if="${#fields.hasErrors('dataDeLancamento')}"
+                        th:errors="*{dataDeLancamento}"></span>
+                    <input type="text" required="required" th:field="*{desenvolvedor}" placeholder="Desenvolvedor">
+                    <span class="mensagem" th:if="${#fields.hasErrors('desenvolvedor')}"
+                        th:errors="*{desenvolvedor}"></span>
+                    <input type="text" required="required" th:field="*{genero}" placeholder="Gênero">
+                    <span class="mensagem" th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}"></span>
+                    <input type="text" required="required" th:field="*{regiao}" placeholder="Região">
+                    <span class="mensagem" th:if="${#fields.hasErrors('regiao')}" th:errors="*{regiao}"></span>
+                    <button type="submit">Adicionar</button>
+                    <button type="button"><a th:href="@{/jogo/admin/listar}">Voltar</a></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

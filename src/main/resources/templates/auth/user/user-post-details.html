@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Post</title>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: header"></div>
+    <main>
+        <div class="cont-form-post">
+            <a href="/posts">Posts</a>
+            <article>
+                <h1><span th:text="${post.titulo}"></span></h1>
+                <p>
+                    <span th:text="${post.autor}"></span>
+                    <span th:text="${post.data}"></span>
+                </p>
+                <section>
+                    <p><span th:utext="${post.texto}"></span></p>
+                </section>
+            </article>
+        </div>
+    </main>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <title>Novo Post</title>
+</head>
+
+<body>
+    <div th:replace="fragments/fragments :: header"></div>
+    <section>
+        <div class="cont-form-post">
+            <div>
+                <form class="form-post" method="post">
+                    <div role="alert" th:if="${not #strings.isEmpty(mensagem)}">
+                        <span th:text="${mensagem}"></span>
+                    </div>
+                    <input type="text" name="titulo" placeholder="Digite o Título">
+                    <input type="text" name="autor" placeholder="Digite o Autor">
+                    <textarea type="text" name="texto" placeholder="Digite o Texto"></textarea>
+                    <button type="submit">Publicar</button>
+                    <div style="padding: 0.8%"><a href="/posts">Cancelar</a></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div th:replace="fragments/fragments :: footer"></div>
+</body>
+
+</html>

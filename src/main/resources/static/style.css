@@ -305,6 +305,55 @@ textarea:focus {
     text-align: center;
 }
 
+.cont-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    margin: 2%;
+    padding: 1%;
+    height: auto;
+}
+
+.cont-form-post {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    margin: 2%;
+    padding: 1%;
+    height: 690px;
+}
+
+.form-post input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    width: 60%;
+    height: 47px;
+    font-family: 'IBM Plex Sans';
+    font-size: 1em;
+    padding: 1% 0% 0% 0.4%;
+}
+
+.form-post textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    border-bottom: 1px solid #000000;
+    width: 60%;
+    font-family: 'IBM Plex Sans';
+    font-size: 1em;
+    padding: 1% 0% 0% 0.4%;
+}
+
+.form-post input,
+textarea:focus {
+    outline: none;
+}
+
+.form-post button:hover {
+    background-color: rgba(0, 0, 0, 0.384);
+}
+
 .foot {
     margin: 2%;
     padding: 1%;
